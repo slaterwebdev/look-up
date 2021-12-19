@@ -241,7 +241,9 @@ input:focus {
 
 .mars-search-advisory,
 .max-date,
-.apod-date {
+.apod-date,
+.apod-fail-msg,
+.earth-fail-msg {
     font-size: 11px;
 }
 

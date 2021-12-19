@@ -38,7 +38,7 @@ apodReq.addEventListener('submit', (e) => {
             apodInput.style.border = '0px solid red';
         } else {
             apodInput.style.border = '2px solid red';
-            apodRegexFail.innerHTML = '<p>Please submit a correctly formatted date.</p>';
+            apodRegexFail.innerHTML = '<p class="apod-fail-msg">Please submit a correctly formatted date.<br> If format is correct, try another date as some dates have no data.</p>';
         }
     })
     .catch(err => console.log(err, 'There was an error recieving information from the server.'));
@@ -89,12 +89,13 @@ marsSearch.addEventListener('submit' , (e) => {
         marsImgContainer.classList.remove('d-none');
         } else {
             solReq.style.border = '2px solid red';
-            marsRegexFail.innerHTML = '<p>Please submit a correctly formatted date.</p>';
+            marsRegexFail.innerHTML = `<p class="max-date text-center text-secondary text-danger">Please ensure date format is correct and a rover is selected.<br>A portion of dates has no available photos from the rovers, if date format is correct then try a new date.</p>`;
         }
     })
     .catch((err) => {
         carousel.innerHTML = ``;
-        marsRegexFail.innerHTML = `<p class="max-date text-center text-secondary">Sorry, for a portion of dates there is no available photos for all rovers, this is one of them please try another!</p>`;
+        solReq.style.border = '2px solid red';
+        marsRegexFail.innerHTML = `<p class="max-date text-center text-secondary text-danger">Please ensure date format is correct and a rover is selected.<br>A portion of dates has no available photos from the rovers, if date format is correct then try a new date.</p>`;
     });
     marsSearch.reset();
 });
@@ -121,7 +122,7 @@ nasaSearch.addEventListener('submit', (e) => {
     .catch(err => {
         nasaPic.setAttribute('src', '')
         nasaImgSearch.classList.add('red-border');
-        nasaRegexFail.innerHTML = `<p class="text-center">Please submit a correctly formatted date.</p>`;
+        nasaRegexFail.innerHTML = `<p class="text-center earth-fail-msg">Please submit a correctly formatted date.<br> If format is correct, try another date as some dates have no data.</p>`;
     });
     nasaSearch.reset();
 });
