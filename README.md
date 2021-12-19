@@ -1,2 +1,2 @@
 look-up-portfolio-project
-Portfolio project with the use of multiple NASA API's and Bootstrap.
+Portfolio project with the use of multiple NASA API's and Bootstrap for the css.
